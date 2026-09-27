@@ -3,8 +3,8 @@
 - title: Information Borrowing across Heterogeneous Data Sources
   question: How can useful information be borrowed across heterogeneous data sources without imposing inappropriate sharing?
   description: >-
-    I develop methods that learn when and how much information to borrow from imperfect or
-    related data sources, while protecting against inappropriate sharing. These methods are
+    I develop methods that learn when and how much information to borrow from related but
+    possibly imperfect data sources, while protecting against inappropriate sharing. These methods are
     applied to AI-generated biological data, particularly virtual cells, and to integrative
     genomic studies across biological contexts.
   image: /assets/img/research/information-borrowing.png
