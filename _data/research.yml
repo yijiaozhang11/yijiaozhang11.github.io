@@ -1,7 +1,7 @@
 # Keep publication metadata in _bibliography/papers.bib.
 # Missing keys are reported rather than replaced with demo publications.
 - title: Information Borrowing across Heterogeneous Data Sources
-  question: How can useful information be borrowed across heterogeneous data sources without imposing inappropriate sharing?
+  question: How can information from AI-generated and other heterogeneous data sources be used reliably without imposing inappropriate sharing?
   description: >-
     I develop methods that learn when and how much information to borrow from related but
     possibly imperfect data sources, while protecting against inappropriate sharing. These methods are

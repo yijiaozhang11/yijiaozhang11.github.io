@@ -123,15 +123,15 @@ load the palette and homepage styles only on this page, without shadowing any th
         <a href="https://www.fdsm.fudan.edu.cn/en/2025/1106/c1056a24491/page1.htm" target="_blank" rel="noopener noreferrer">Zhongyi Zhu</a>,
         and was a visiting Ph.D. student at the University of California, Irvine, hosted by Prof.
         <a href="https://qu.pstat.ucsb.edu/" target="_blank" rel="noopener noreferrer">Annie Qu</a>.
-        My research develops statistical methods for reliable learning and inference from complex and heterogeneous scientific data.
+        My research develops statistical methods for learning and inference from high-dimensional and heterogeneous data, with an emphasis on their reliable application in modern biology and emerging AI-enabled scientific research.
       </p>
     </section>
 
     <section class="home-section" aria-labelledby="home-research">
       <h2 id="home-research">Research</h2>
       <p>
-        My research interests include AI-augmented inference, data integration and transfer learning, and causal inference, with applications to
-        integrative and single-cell genomics. A central theme of my current work is
+        My research interests span AI-augmented inference, data integration and transfer learning, and causal inference, with particular emphasis on
+        their intersections with integrative genomics and single-cell genomics. A central theme of my current work is
         <strong>statistical learning and inference under heterogeneity</strong>, pursued through three complementary directions: borrowing shared
         information across heterogeneous data, exploiting heterogeneity for structural identification, and learning individual differences through
         shared structure.
