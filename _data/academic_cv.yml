@@ -41,10 +41,6 @@ cv:
         location: Shanghai, China
         start_date: 2016
         end_date: 2020
-      - institution: Chengdu No. 7 High School
-        location: Chengdu, China
-        start_date: 2013
-        end_date: 2016
 
     Awards:
       - title: Fudan Academic Star
