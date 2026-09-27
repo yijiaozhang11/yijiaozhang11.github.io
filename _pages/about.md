@@ -115,7 +115,7 @@ load the palette and homepage styles only on this page, without shadowing any th
 
   <div class="home-content">
     <section class="home-section" aria-labelledby="home-bio">
-      <h2 id="home-bio">Bio</h2>
+      <h2 id="home-bio">Biography</h2>
       <p>
         I am a Postdoctoral Researcher in the Department of Biostatistics, Epidemiology and Informatics at the University of Pennsylvania, working with
         Prof. <a href="https://www.med.upenn.edu/apps/faculty/index.php/g275/p4879509" target="_blank" rel="noopener noreferrer">Hongzhe Li</a>.
