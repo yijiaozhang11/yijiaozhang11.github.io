@@ -9,7 +9,7 @@ last_name: Zhang
 contact_note: # Optional note below social links.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Yijiao Zhang researches statistical learning and inference under heterogeneity at the University of Pennsylvania.
-footer_text: '<span class="site-copyright" aria-hidden="true">© 2026 Yijiao Zhang</span>'
+footer_text:
 keywords: statistics, data science, statistical learning, heterogeneity, causal inference
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon.svg
