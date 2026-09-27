@@ -50,21 +50,13 @@ cv:
       - title: Fudan Academic Star
         awarder: Fudan University
         date: Jun. 2025
-        summary: 30 recipients university-wide
+        summary: (30 recipients university-wide)
       - title: Excellent Graduate of Shanghai
         date: Jun. 2025
-      - title: Excellent Graduate of Shanghai
-        date: Jun. 2020
-      - title: National Top 30, SAS Data Analysis Competition for Chinese Universities
-        date: Dec. 2018
-      - title: National Second Prize, Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM)
-        date: Nov. 2018
-      - title: Second Prize, Shanghai Division, Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM)
-        date: Dec. 2018
-      - title: First Prize, Shanghai Division, 9th Chinese Mathematics Competitions for College Students (CMC)
-        date: Nov. 2017
-      - title: First Prize, 9th Shanghai College Students Mathematics Competition
-        date: Nov. 2017
+      - title: National Scholarship for Doctoral Students
+        date: Nov. 2023
+      - title: National Scholarship for Master's Students
+        date: Nov. 2021
 
   research_interests:
     - AI-augmented inference, Synthetic data, Data integration, Transfer learning

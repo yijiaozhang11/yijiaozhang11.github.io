@@ -218,6 +218,33 @@ kramdown:
 # Includes & excludes
 include: ["_pages"]
 exclude:
+  # Keep template examples in the repository, but out of the published site.
+  - _books/
+  - _news/
+  - _posts/
+  - _projects/
+  - _teachings/
+  - _pages/about_einstein.md
+  - _pages/blog.md
+  - _pages/books.md
+  - _pages/dropdown.md
+  - _pages/news.md
+  - _pages/plugins.md
+  - _pages/profiles.md
+  - _pages/projects.md
+  - _pages/repositories.md
+  # Demo documents and media are not used by the four academic pages.
+  - assets/audio/
+  - assets/bibliography/
+  - assets/html/relativity.html
+  - assets/json/resume.json
+  - assets/json/table_data.json
+  - assets/jupyter/
+  - assets/pdf/example_pdf.pdf
+  - assets/plotly/
+  - assets/rendercv/
+  - assets/video/
+  # Build, documentation, and maintenance files are not public content.
   - AGENTS.md
   - al-folio-upgrade-report.md
   - bin/
@@ -232,12 +259,13 @@ exclude:
   - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/about_einstein.md
   - purgecss.config.js
   - README.md
   - readme_preview/
+  - requirements.txt
   - gems/
   - migrations/
+  - test/
   - vendor
 keep_files:
   - CNAME
@@ -294,6 +322,10 @@ plugins:
 defaults:
   - scope:
       path: "assets"
+    values:
+      sitemap: false
+  - scope:
+      path: "_pages/404.md"
     values:
       sitemap: false
 
