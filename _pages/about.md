@@ -12,8 +12,8 @@ announcements:
 latest_posts:
   enabled: false
 
-# Share the citation template and native abstract expansion with Research.
-publication_abstracts: true
+# Reuse the Research citation template; homepage papers stay compact.
+publication_abstracts: false
 scholar:
   bibliography_template: "{% include_relative _research-citation.liquid %}"
   bibliography_list_tag: div

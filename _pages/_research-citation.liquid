@@ -1,7 +1,7 @@
 {%- comment -%}
   Shared by the publication lists on About, Research and CV. Metadata comes from
   papers.bib; publication_status takes precedence over legacy status fields/notes.
-  About and Research opt into native abstract expansion; CV uses static entries.
+  Research opts into native abstract expansion; About and CV use static entries.
   Do not emit reference: its CSL markup contains IDs duplicated by the two views.
 {%- endcomment -%}
 {%- assign venue = entry.journal | default: entry.booktitle | default: '' -%}

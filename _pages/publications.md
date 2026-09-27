@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /publications/
+permalink: /research/
 title: Research
 description: Statistical learning and inference under heterogeneity.
 nav: true
