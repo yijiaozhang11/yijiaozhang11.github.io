@@ -25,7 +25,7 @@
   description: >-
     I develop methods that use variation across interventions and environments to identify
     causal structures and stable mechanisms that are difficult to recover from a single
-    setting. These methods are applied to gene regulatory network learning and single-cell
+    environment. These methods are applied to gene regulatory network learning and single-cell
     genomics.
   image: /assets/img/research/causal-invariant-learning.png
   image_class: home-research-visual-causal
