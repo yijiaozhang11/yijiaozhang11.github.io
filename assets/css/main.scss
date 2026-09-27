@@ -24,3 +24,25 @@
 @use "typograms";
 
 @use "site-typography";
+
+// The core footer prefixes footer_text with its own copyright sentence. Show
+// only the site's text, while keeping the source license notices untouched.
+body > footer.sticky-bottom.mt-5 {
+  margin-top: 0 !important;
+  padding: 0.5rem 0 1rem;
+  border: 0;
+}
+
+body > footer.sticky-bottom .container {
+  color: transparent;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+}
+
+body > footer.sticky-bottom .site-copyright {
+  color: var(--global-text-color-light);
+  font-size: 0.75rem;
+}
