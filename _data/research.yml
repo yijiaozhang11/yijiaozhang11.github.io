@@ -1,0 +1,47 @@
+# Keep publication metadata in _bibliography/papers.bib.
+# Missing keys are reported rather than replaced with demo publications.
+- title: Information Borrowing across Heterogeneous Data Sources
+  question: How can useful information be borrowed across heterogeneous data sources without imposing inappropriate sharing?
+  description: >-
+    I develop methods that learn when and how much information to borrow from imperfect or
+    related data sources, while protecting against inappropriate sharing. These methods are
+    applied to AI-generated biological data, particularly virtual cells, and to integrative
+    genomic studies across biological contexts.
+  image: /assets/img/research/information-borrowing.png
+  groups:
+    - title: Calibrating auxiliary information from AI-generated or observational data
+      publication_keys:
+        - zhang2026gpi
+        - zhang2025fqte
+    - title: Adaptive information transfer across related sources
+      publication_keys:
+        - zhang2025smooth
+        - bai2026shift
+        - zhang2026concert
+        - yuan2025ot
+
+- title: Exploiting Heterogeneity for Causal and Invariant Learning
+  question: How can variation across interventions and environments become a source of structural identification?
+  description: >-
+    I develop methods that use variation across interventions and environments to identify
+    causal structures and stable mechanisms that are difficult to recover from a single
+    setting. These methods are applied to gene regulatory network learning and single-cell
+    genomics.
+  image: /assets/img/research/causal-invariant-learning.png
+  image_class: home-research-visual-causal
+  groups:
+    - publication_keys:
+        - zhang2026dag
+        - zhang2026beir
+
+- title: Individualized Learning with Shared Structure
+  question: How can shared structure improve learning while preserving meaningful individual differences?
+  description: >-
+    I develop methods that borrow shared latent structure across individuals while preserving
+    meaningful individual-specific variation. These methods are applied to personalized
+    biomedical analysis and personalized language generation.
+  image: /assets/img/research/individualized-learning.png
+  groups:
+    - publication_keys:
+        - zhang2026mediation
+        - zhang2026syntax

@@ -1,0 +1,68 @@
+// Only font families and weights: component geometry and colors stay in their
+// existing stylesheets. Inheritance preserves icon, math, and code font rules.
+$body-font: "Source Sans 3", sans-serif;
+$heading-font: "Source Serif 4", serif;
+
+body {
+  font-family: $body-font;
+  font-weight: 400;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $body-font;
+  font-weight: 500;
+}
+
+.academic-home .home-related-work > h3,
+.academic-home .home-citation-group > h4,
+.academic-research .research-subtopic > h3,
+.cv .card-title {
+  font-family: $body-font;
+  font-weight: 600;
+}
+
+h1,
+.academic-home #home-name,
+.academic-home .home-section > h2,
+.academic-home .home-research-title,
+.academic-research .research-topic > h2 {
+  font-family: $heading-font;
+  font-weight: 600;
+}
+
+.academic-teaching .teaching-card h3,
+:is(.academic-home, .academic-research, .academic-cv) .publication-title {
+  font-family: $heading-font;
+  font-weight: 500;
+}
+
+.navbar {
+  font-family: $body-font;
+}
+
+.navbar .navbar-brand,
+.navbar.navbar-light .navbar-nav .nav-item .nav-link,
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  font-weight: 500;
+}
+
+// The CV templates and navbar still contain legacy light-weight utilities.
+.font-weight-light,
+.font-weight-lighter,
+.academic-home .home-sidebar .home-initials {
+  font-weight: 400;
+}
+
+.academic-home .home-research-question {
+  font-family: $body-font;
+  font-weight: 400;
+}
+
+// CV templates mark supporting institution/department metadata as h6.
+.cv h6:not(.title) {
+  font-weight: 400;
+}

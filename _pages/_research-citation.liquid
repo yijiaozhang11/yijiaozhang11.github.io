@@ -1,0 +1,154 @@
+{%- comment -%}
+  Shared by the publication lists on About, Research and CV. Metadata comes from
+  papers.bib; publication_status takes precedence over legacy status fields/notes.
+  About and Research opt into native abstract expansion; CV uses static entries.
+  Do not emit reference: its CSL markup contains IDs duplicated by the two views.
+{%- endcomment -%}
+{%- assign venue = entry.journal | default: entry.booktitle | default: '' -%}
+{%- assign status_text = entry.publication_status | default: entry.status | default: entry.pubstate | default: '' -%}
+{%- if status_text == '' -%}
+  {%- capture status_text -%}{{ entry.note }} {{ entry.additional_info }}{%- endcapture -%}
+{%- endif -%}
+{%- assign status_text = status_text | downcase | replace: '-', ' ' | replace: '_', ' ' -%}
+{%- assign unpublished = false -%}
+{%- assign to_appear = false -%}
+{%- assign unpublished_markers = 'under review,in review,under revision,major revision,minor revision,resubmit,r&r,submitted,submission,preprint,unpublished,in preparation,working paper,arxiv,revision'
+  | split: ','
+-%}
+{%- for marker in unpublished_markers -%}
+  {%- if status_text contains marker -%}{%- assign unpublished = true -%}{%- endif -%}
+{%- endfor -%}
+{%- unless unpublished -%}
+  {%- assign accepted_markers = 'accepted,to appear,forthcoming,in press' | split: ',' -%}
+  {%- for marker in accepted_markers -%}
+    {%- if status_text contains marker -%}{%- assign to_appear = true -%}{%- endif -%}
+  {%- endfor -%}
+{%- endunless -%}
+{%- if venue == '' -%}{%- assign unpublished = true -%}{%- endif -%}
+{%- if entry.type == 'unpublished' and to_appear == false -%}{%- assign unpublished = true -%}{%- endif -%}
+{%- assign venue = venue
+  | regex_replace: '(?i)\s*(?:[,;]\s*|\(\s*|\[\s*)(?:just accepted|accepted|forthcoming|to appear|in press)\s*[)\]]?\s*$', ''
+  | strip
+-%}
+
+{%- assign arxiv_url = entry.arxiv_url | default: entry.arxiv | default: '' -%}
+{%- assign archive_prefix = entry.archiveprefix | downcase -%}
+{%- if arxiv_url == '' and archive_prefix == 'arxiv' -%}{%- assign arxiv_url = entry.eprint | default: '' -%}{%- endif -%}
+{%- if arxiv_url == '' and entry.url contains 'arxiv.org/' -%}{%- assign arxiv_url = entry.url -%}{%- endif -%}
+{%- if arxiv_url == '' and entry.html contains 'arxiv.org/' -%}{%- assign arxiv_url = entry.html -%}{%- endif -%}
+{%- if arxiv_url == '' and entry.pdf contains 'arxiv.org/' -%}{%- assign arxiv_url = entry.pdf -%}{%- endif -%}
+{%- if arxiv_url != '' -%}
+  {%- unless arxiv_url contains '://' -%}
+    {%- assign arxiv_id = arxiv_url | remove: 'arXiv:' | remove: 'arxiv:' | strip -%}
+    {%- assign arxiv_url = arxiv_id | prepend: 'https://arxiv.org/abs/' -%}
+  {%- endunless -%}
+{%- endif -%}
+
+{%- assign paper_url = '' -%}
+{%- unless unpublished -%}
+  {%- if entry.doi and entry.doi != '' -%}
+    {%- assign paper_url = entry.doi -%}
+    {%- unless paper_url contains '://' -%}
+      {%- assign paper_url = paper_url | remove: 'doi:' | strip | prepend: 'https://doi.org/' -%}
+    {%- endunless -%}
+  {%- elsif entry.html and entry.html != '' and entry.html != arxiv_url -%}
+    {%- assign paper_url = entry.html -%}
+    {%- unless paper_url contains '://' -%}
+      {%- assign first_character = paper_url | slice: 0 -%}
+      {%- unless first_character == '/' -%}{%- assign paper_url = paper_url | prepend: '/assets/html/' -%}{%- endunless -%}
+      {%- assign paper_url = paper_url | relative_url -%}
+    {%- endunless -%}
+  {%- elsif entry.url and entry.url != '' and entry.url != arxiv_url -%}
+    {%- assign paper_url = entry.url -%}
+    {%- unless paper_url contains '://' -%}{%- assign paper_url = paper_url | relative_url -%}{%- endunless -%}
+  {%- elsif entry.pdf and entry.pdf != '' and entry.pdf != arxiv_url -%}
+    {%- assign paper_url = entry.pdf -%}
+    {%- unless paper_url contains '://' -%}
+      {%- assign first_character = paper_url | slice: 0 -%}
+      {%- unless first_character == '/' -%}{%- assign paper_url = paper_url | prepend: '/assets/pdf/' -%}{%- endunless -%}
+      {%- assign paper_url = paper_url | relative_url -%}
+    {%- endunless -%}
+  {%- endif -%}
+{%- endunless -%}
+
+{%- if page.publication_abstracts -%}
+  <details class="publication-entry" data-publication-key="{{ entry.key | escape }}">
+    <summary class="publication-summary">
+{%- endif -%}
+<span class="publication-title">{{ entry.title | escape }}</span>
+<span class="publication-authors">
+  {%- for author in entry.author_array -%}
+    {%- unless forloop.first -%}
+      {%- if forloop.last -%}
+        {% if forloop.length > 2 %}, {% else %}  {% endif %}and
+      {% else -%}
+        ,
+      {% endif -%}
+    {%- endunless -%}
+    {%- assign is_self = false -%}
+    {%- assign author_last = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+    {%- if site.scholar.last_name contains author_last and site.scholar.first_name contains author.first -%}{%- assign is_self = true -%}{%- endif -%}
+    {%- assign author_name = author.first | append: ' ' | append: author.prefix | append: ' ' | append: author_last -%}
+    {%- if author.suffix and author.suffix != '' -%}{%- assign author_name = author_name | append: ', ' | append: author.suffix -%}{%- endif -%}
+    {%- if is_self -%}<strong>{%- endif -%}
+    {{- author_name | regex_replace: '\s+', ' ' | strip | escape -}}
+    {%- if is_self -%}</strong>{%- endif -%}
+    {%- if page.publication_author_notes -%}
+      {%- assign author_display_name = author_name | regex_replace: '\s+', ' ' | strip -%}
+      {%- assign author_note = site.data.academic_cv.cv.publication_author_notes[entry.key][author_display_name] -%}
+      {%- if author_note -%}
+        <sup>{{ author_note | escape }}</sup>
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  .
+</span>
+<span class="publication-venue-line">
+  <span class="publication-meta">
+    {%- if unpublished -%}
+      {%- if arxiv_url != '' -%}
+        <em>{{ page.publication_preprint_label | default: 'arXiv preprint' | escape }}</em>,
+      {% endif -%}
+      {{- entry.year | escape }}.
+    {%- else -%}
+      <em>{{ venue | escape }}</em>
+      {%- if to_appear -%}
+        , to appear
+      {%- else -%}
+        {%- if entry.volume and entry.volume != '' -%}
+          , {{ entry.volume | escape -}}
+          {%- if entry.number and entry.number != '' %}({{ entry.number | escape }}){% endif -%}
+        {%- endif -%}
+        {%- if entry.pages and entry.pages != '' %}, {{ entry.pages | replace: '--', '–' | escape }}{% endif -%}
+      {%- endif -%}
+      , {{ entry.year | escape }}.
+    {%- endif -%}
+  </span>
+  <span class="publication-links">
+    {% if paper_url != '' -%}
+      <a href="{{ paper_url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="Paper: {{ entry.title | escape }}">[Paper]</a>
+    {%- endif %}
+    {% if arxiv_url != '' -%}
+      <a href="{{ arxiv_url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="arXiv: {{ entry.title | escape }}">[arXiv]</a>
+    {%- endif %}
+    {% if entry.code and entry.code != '' %}
+      {% assign code_url = entry.code %}
+      {% unless code_url contains '://' %}{% assign code_url = code_url | relative_url %}{% endunless %}
+      <a href="{{ code_url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="Code: {{ entry.title | escape }}">[Code]</a>
+    {% endif %}
+  </span>
+</span>
+{%- if page.publication_abstracts -%}
+  <span class="publication-abstract-toggle">Abstract <span class="publication-chevron" aria-hidden="true"></span></span>
+  </summary>
+  <div class="publication-abstract">
+    <p class="publication-abstract-label">Abstract</p>
+    {%- assign abstract = entry.abstract | default: '' | strip -%}
+    {% if abstract != '' %}
+      <p>{{ abstract | escape | newline_to_br }}</p>
+    {% else %}
+      <p>Abstract not yet added.</p>
+    {% endif %}
+  </div>
+  </details>
+{%- endif -%}

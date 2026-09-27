@@ -1,0 +1,124 @@
+# Personal CV content. Publication metadata remains in _bibliography/papers.bib;
+# course details remain in _data/teaching.yml.
+cv:
+  name: Yijiao Zhang
+  label: Postdoctoral Researcher
+  email: yijiao.zhang@pennmedicine.upenn.edu
+  phone: +1 (267) 366-5810
+  scholar_url: https://scholar.google.com/citations?user=LlrYMYQAAAAJ
+  address: 3600 Civic Center Boulevard, Philadelphia, PA 19104
+
+  sections:
+    Experience:
+      - position: Postdoctoral Researcher
+        company: University of Pennsylvania
+        summary: Department of Biostatistics, Epidemiology and Informatics
+        school: Perelman School of Medicine
+        location: Philadelphia, PA
+        start_date: 2025
+        end_date: Present
+        highlights:
+          - "Mentor: Prof. Hongzhe Li"
+
+    Education:
+      - studyType: Ph.D. in Statistics
+        institution: Fudan University
+        area: Department of Statistics
+        location: Shanghai, China
+        start_date: 2020
+        end_date: 2025
+        highlights:
+          - "Advisor: Prof. Zhongyi Zhu"
+      - studyType: Visiting Ph.D. Student, Department of Statistics
+        institution: University of California, Irvine
+        location: Irvine, CA
+        start_date: 2023
+        end_date: 2024
+        highlights:
+          - "Host: Prof. Annie Qu"
+      - studyType: B.S. in Mathematics and Applied Mathematics
+        institution: Tongji University
+        location: Shanghai, China
+        start_date: 2016
+        end_date: 2020
+      - institution: Chengdu No. 7 High School
+        location: Chengdu, China
+        start_date: 2013
+        end_date: 2016
+
+    Awards:
+      - title: Fudan Academic Star
+        awarder: Fudan University
+        date: Jun. 2025
+        summary: 30 recipients university-wide
+      - title: Excellent Graduate of Shanghai
+        date: Jun. 2025
+      - title: Excellent Graduate of Shanghai
+        date: Jun. 2020
+      - title: National Top 30, SAS Data Analysis Competition for Chinese Universities
+        date: Dec. 2018
+      - title: National Second Prize, Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM)
+        date: Nov. 2018
+      - title: Second Prize, Shanghai Division, Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM)
+        date: Dec. 2018
+      - title: First Prize, Shanghai Division, 9th Chinese Mathematics Competitions for College Students (CMC)
+        date: Nov. 2017
+      - title: First Prize, 9th Shanghai College Students Mathematics Competition
+        date: Nov. 2017
+
+  research_interests:
+    - AI-augmented inference, Synthetic data, Data integration, Transfer learning
+    - Causal inference, Optimal transport, Quantile regression, High-dimensional data
+    - Integrative genomics, Single-cell genomics
+
+  # Author contributions from the supplied CV, shared by the CV and Research pages.
+  publication_author_notes:
+    zhang2026beir:
+      Yijiao Zhang: "†"
+    bai2026shift:
+      Yijiao Zhang: "†"
+      Zhongyi Zhu: "†"
+    zhang2026concert:
+      Ruqian Zhang: "*"
+      Yijiao Zhang: "*"
+
+  talks:
+    - category: Invited
+      entries:
+        - venue: Young Statisticians Forum of Nankai University
+          location: Tianjin, China
+          date: Nov. 2023
+          title: Transfer Learning for High-dimensional Quantile Regression via Convolution Smoothing
+        - venue: ICSA 2023 China Conference
+          location: Chengdu, China
+          date: Jul. 2023
+          title: Transfer Learning for High-dimensional Quantile Regression via Convolution Smoothing
+    - category: Contributed
+      entries:
+        - venue: JSM 2026
+          location: Boston, MA
+          date: Aug. 2026
+          title: Causal Network Discovery from Interventional Count Data with Latent Linear DAGs
+        - venue: JCSDS 2025 China Conference
+          location: Hangzhou, China
+          date: Jul. 2025
+          title: Individualized Dynamic Mediation Analysis Using Latent Factor Models
+        - venue: JSM 2024
+          location: Portland, OR
+          date: Aug. 2024
+          title: Individualized Dynamic Mediation Analysis Using Latent Factor Models
+        - venue: JCSDS 2023 China Conference
+          location: Beijing, China
+          date: Jul. 2023
+          title: Transfer Learning for High-dimensional Quantile Regression via Convolution Smoothing
+  journal_reviews:
+    - journal: Journal of the American Statistical Association
+      count: 4
+    - journal: Journal of Machine Learning Research
+      count: 1
+    - journal: PLOS Genetics
+      count: 1
+    - journal: Spatial Economic Analysis
+      count: 1
+    - journal: Statistics and Computing
+      count: 1

@@ -1,0 +1,27 @@
+/* Loaded by About and Research. Bridge accent tokens into the gem's shell. */
+:root {
+  --autumn-gold: #c89b3c;
+  --autumn-hover: #a97d27;
+  --autumn-emphasis: #8a6420;
+  --autumn-surface: #fbf7ee;
+  --autumn-surface-strong: #f6eedc;
+  --autumn-border: #e9d9b6;
+  --autumn-shadow: rgb(138 100 32 / 8%);
+  --global-theme-color: var(--autumn-gold);
+  --global-hover-color: var(--autumn-hover);
+  --global-hover-text-color: var(--global-text-color);
+  --global-divider-color: var(--autumn-border);
+}
+
+/* Keep the theme's dark canvas and readable accents when dark mode is selected. */
+:root[data-theme="dark"] {
+  --autumn-emphasis: var(--autumn-gold);
+  --autumn-surface: color-mix(in srgb, var(--autumn-gold) 8%, var(--global-bg-color));
+  --autumn-surface-strong: color-mix(in srgb, var(--autumn-gold) 14%, var(--global-bg-color));
+  --autumn-border: color-mix(in srgb, var(--autumn-gold) 30%, var(--global-bg-color));
+  --autumn-shadow: rgb(0 0 0 / 16%);
+  --global-theme-color: var(--autumn-gold);
+  --global-hover-color: var(--autumn-hover);
+  --global-hover-text-color: var(--global-text-color);
+  --global-divider-color: var(--autumn-border);
+}

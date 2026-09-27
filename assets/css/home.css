@@ -1,0 +1,382 @@
+/* Page-local styles; theme tokens keep light and dark mode in sync. */
+.academic-home {
+  --home-sticky-offset: 6rem;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+  padding-block: 0.5rem 3rem;
+  color: var(--global-text-color);
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.academic-home *,
+.academic-home *::before,
+.academic-home *::after {
+  box-sizing: border-box;
+}
+
+.academic-home .home-sidebar,
+.academic-home .home-content {
+  min-width: 0;
+}
+
+.academic-home .home-sidebar {
+  align-self: start;
+}
+
+.academic-home .home-portrait {
+  display: block;
+  width: 100%;
+  max-width: 12rem;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 1.25rem;
+  border-radius: 0.65rem;
+  object-fit: cover;
+}
+
+.academic-home .home-portrait-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--autumn-surface);
+  color: var(--global-text-color-light);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.academic-home .home-initials {
+  color: var(--autumn-emphasis);
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+.academic-home h1 {
+  margin: 0 0 0.65rem;
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.academic-home .home-position,
+.academic-home .home-institution {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.academic-home a {
+  color: var(--autumn-emphasis);
+  text-underline-offset: 0.2em;
+}
+
+.academic-home a:hover {
+  color: var(--global-hover-color);
+}
+
+.academic-home a:focus-visible,
+.academic-home summary:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 4px;
+  border-radius: 0.25rem;
+}
+
+.academic-home .home-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.academic-home .home-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--autumn-gold);
+  font-size: 1.35rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.academic-home .home-social-icon:hover,
+.academic-home .home-social-icon:focus-visible {
+  color: var(--autumn-hover);
+  text-decoration: none;
+}
+
+.academic-home .home-social-icon:focus-visible {
+  outline: 2px solid var(--autumn-gold);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.academic-home .home-social-icon[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+.academic-home .home-section + .home-section {
+  margin-top: 2.75rem;
+}
+
+.academic-home h2 {
+  margin: 0 0 1rem;
+  font-size: 1.635rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.academic-home .home-section > p {
+  margin: 0;
+}
+
+.academic-home .home-research-list {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.academic-home .home-research-card {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.75rem;
+  background: var(--global-card-bg-color);
+  scroll-margin-top: var(--home-sticky-offset);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.academic-home .home-research-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 1rem 2rem;
+  margin: 0;
+  padding: 2.25rem 1.5rem;
+  border-radius: inherit;
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 160ms ease;
+}
+
+.academic-home .home-research-summary::-webkit-details-marker {
+  display: none;
+}
+
+.academic-home .home-research-summary::marker {
+  content: "";
+}
+
+.academic-home .home-research-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: clamp(230px, 66vw, 280px);
+  min-height: 230px;
+  border-radius: 0.4rem;
+  /* A neutral canvas also keeps transparent diagrams readable in dark mode. */
+  background: #fff;
+}
+
+.academic-home .home-research-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 280px;
+  object-position: center;
+  object-fit: contain;
+}
+
+/* Compensate only for the causal diagram's transparent side margins. */
+.academic-home .home-research-visual-causal {
+  overflow: hidden;
+}
+
+.academic-home .home-research-visual-causal img {
+  transform: scale(1.27);
+}
+
+.academic-home .home-image-placeholder {
+  padding: 0.75rem;
+  color: #666;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.academic-home .home-research-copy,
+.academic-home .home-research-title,
+.academic-home .home-research-question,
+.academic-home .home-research-description {
+  display: block;
+  min-width: 0;
+}
+
+.academic-home .home-research-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.academic-home .home-research-question {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.academic-home .home-research-description {
+  margin-top: 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.academic-home .home-research-action {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--autumn-emphasis);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.academic-home .home-expansion-indicator {
+  width: 0.45rem;
+  height: 0.45rem;
+  color: var(--autumn-gold);
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-0.15rem) rotate(45deg);
+}
+
+.academic-home .home-action-open,
+.academic-home .home-research-card[open] .home-action-closed {
+  display: none;
+}
+
+.academic-home .home-research-card[open] .home-action-open {
+  display: inline;
+}
+
+.academic-home .home-research-card[open] .home-expansion-indicator {
+  color: var(--autumn-emphasis);
+  transform: translateY(0.1rem) rotate(225deg);
+}
+
+.academic-home .home-related-work {
+  margin: 0 1.5rem;
+  padding-block: 1.25rem 1.5rem;
+  border-top: 1px solid var(--global-divider-color);
+  font-size: 0.9rem;
+}
+
+.academic-home .home-related-work h3 {
+  margin: 0 0 1rem;
+  color: var(--global-text-color-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.academic-home .home-citation-group + .home-citation-group {
+  margin-top: 1.5rem;
+}
+
+.academic-home .home-citation-group h4 {
+  margin: 0 0 0.85rem;
+  color: var(--autumn-emphasis);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.academic-home .home-citation-list + .home-citation-list,
+.academic-home .home-citation-list + .home-pending {
+  margin-top: 1rem;
+}
+
+.academic-home .home-citation {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.academic-home .home-pending {
+  margin: 0;
+  color: var(--global-text-color-light);
+  font-size: 0.85rem;
+}
+
+@media (min-width: 36rem) {
+  .academic-home .home-research-summary {
+    /* Scale to this site's content width instead of forcing a 280px minimum. */
+    grid-template-columns: minmax(0, 32%) minmax(0, 1fr);
+  }
+
+  .academic-home .home-research-visual {
+    height: auto;
+  }
+
+  .academic-home .home-research-action {
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 56rem) {
+  .academic-home {
+    grid-template-columns: minmax(11.5rem, 1fr) minmax(0, 3.5fr);
+    gap: 2.5rem;
+  }
+
+  .academic-home .home-sidebar {
+    position: sticky;
+    top: var(--home-sticky-offset);
+  }
+}
+
+/* Keep the whole profile reachable on short landscape screens. */
+@media (max-height: 44rem) {
+  .academic-home .home-sidebar {
+    position: static;
+  }
+}
+
+@media (hover: hover) {
+  .academic-home .home-research-card:hover {
+    border-color: var(--global-hover-color);
+    box-shadow: 0 3px 12px var(--autumn-shadow);
+  }
+
+  .academic-home .home-research-summary:hover {
+    background-color: var(--autumn-surface-strong);
+  }
+
+  .academic-home .home-research-summary:hover .home-research-action,
+  .academic-home .home-research-summary:hover .home-expansion-indicator {
+    color: var(--global-hover-color);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .academic-home .home-research-card,
+  .academic-home .home-research-summary {
+    transition: none;
+  }
+}

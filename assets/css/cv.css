@@ -1,0 +1,143 @@
+/* CV-only presentation; the global container and page layout remain gem-owned. */
+.academic-cv {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.academic-cv .cv-section + .cv-section {
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--autumn-border);
+}
+
+.academic-cv .cv-section-title {
+  margin: 0 0 1.25rem;
+  font-family: "Source Serif 4", serif;
+  font-size: 1.635rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.academic-cv .cv-timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.academic-cv .cv-timeline-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+  column-gap: 1.25rem;
+  align-items: baseline;
+}
+
+.academic-cv .cv-timeline-entry + .cv-timeline-entry {
+  margin-top: 1.35rem;
+}
+
+.academic-cv .cv-entry-content {
+  min-width: 0;
+}
+
+.academic-cv .cv-entry-content p,
+.academic-cv .cv-interests p,
+.academic-cv .cv-service-text {
+  margin: 0;
+}
+
+.academic-cv .cv-institution,
+.academic-cv .cv-item-title {
+  margin: 0 0 0.2rem;
+  font-family: "Source Serif 4", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.academic-cv .cv-institution {
+  font-size: 1.15rem;
+}
+
+.academic-cv .cv-role,
+.academic-cv .cv-talk-title,
+.academic-cv .cv-award-title {
+  font-weight: 500;
+}
+
+.academic-cv .cv-entry-content .cv-talk-title {
+  margin-top: 0.25rem;
+}
+
+.academic-cv .cv-metadata,
+.academic-cv .cv-date,
+.academic-cv .cv-author-note {
+  color: var(--global-text-color-light);
+  font-weight: 400;
+}
+
+.academic-cv .cv-date {
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.academic-cv .cv-subheading,
+.academic-cv .cv-publication-years > h3 {
+  margin: 1.5rem 0 0.85rem;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.academic-cv .cv-section-title + .cv-subheading,
+.academic-cv .cv-publication-years > h3:first-child {
+  margin-top: 0;
+}
+
+.academic-cv .cv-publication + .cv-publication {
+  margin-top: 1.25rem;
+}
+
+.academic-cv .cv-publication-list + h3 {
+  margin-top: 2rem;
+}
+
+.academic-cv .cv-author-note {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+}
+
+.academic-cv .cv-interests p + p {
+  margin-top: 0.3rem;
+}
+
+.academic-cv .cv-course + .cv-course {
+  margin-top: 1rem;
+}
+
+.academic-cv .cv-award-note {
+  font-size: 0.9rem;
+}
+
+.academic-cv a {
+  color: var(--autumn-emphasis);
+  text-underline-offset: 0.2em;
+}
+
+.academic-cv a:hover {
+  color: var(--autumn-hover);
+}
+
+.academic-cv a:focus-visible {
+  outline: 2px solid var(--autumn-hover);
+  outline-offset: 3px;
+}
+
+@media (max-width: 36rem) {
+  .academic-cv .cv-timeline-entry {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.2rem;
+  }
+}

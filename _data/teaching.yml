@@ -1,0 +1,32 @@
+# Keep each teaching appointment separate, including repeat courses in different years.
+- year: 2023
+  title: Probability Theory and Mathematical Statistics
+  program: Undergraduate
+  term: Fall
+
+- year: 2023
+  title: Statistical Data Analysis
+  program: Master’s
+  term: Spring
+  description: Topics included multiple testing, spectral clustering, and conformal prediction.
+
+- year: 2021
+  title: Applied Statistics
+  program: MBA
+  term: Spring
+
+- year: 2021
+  title: Statistical Software
+  program: Undergraduate
+  term: Spring
+  description: Statistical computing and data analysis using R.
+
+- year: 2021
+  title: Nonparametric Statistics
+  program: Undergraduate
+  term: Spring
+
+- year: 2020
+  title: Probability Theory and Mathematical Statistics
+  program: Undergraduate
+  term: Fall
