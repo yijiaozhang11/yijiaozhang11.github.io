@@ -39,7 +39,7 @@
   description: >-
     I develop methods that borrow shared latent structure across individuals while preserving
     meaningful individual-specific variation. These methods are applied to personalized
-    biomedical analysis and personalized language generation.
+    epigenomic and biomedical analysis, as well as personalized language generation.
   image: /assets/img/research/individualized-learning.png
   groups:
     - publication_keys:
