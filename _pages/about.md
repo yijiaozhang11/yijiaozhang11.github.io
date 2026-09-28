@@ -57,9 +57,6 @@ load the palette and homepage styles only on this page, without shadowing any th
     <p class="home-position">{{ profile.position | escape }}</p>
     <p class="home-institution">{{ profile.institution | escape }}</p>
     <div class="home-contact">
-      {% if socials.email and socials.email != '' %}
-        <p>{{ socials.email | replace: '@', ' AT ' | replace: '.', ' DOT ' | escape }}</p>
-      {% endif %}
       {% if profile.address_line_1 and profile.address_line_1 != '' %}
         <address>
           {{ profile.address_line_1 | escape }}
