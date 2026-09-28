@@ -71,6 +71,22 @@
   line-height: 1.5;
 }
 
+.academic-home .home-contact {
+  margin-top: 0.65rem;
+  color: var(--global-text-color-light);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.academic-home .home-contact p,
+.academic-home .home-contact address {
+  margin: 0 0 0.3rem;
+}
+
+.academic-home .home-contact address {
+  font-style: normal;
+}
+
 .academic-home a {
   color: var(--autumn-emphasis);
   text-underline-offset: 0.2em;

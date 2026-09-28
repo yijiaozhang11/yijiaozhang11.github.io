@@ -56,6 +56,17 @@ load the palette and homepage styles only on this page, without shadowing any th
     <h1 id="home-name">{{ full_name | escape }}</h1>
     <p class="home-position">{{ profile.position | escape }}</p>
     <p class="home-institution">{{ profile.institution | escape }}</p>
+    <div class="home-contact">
+      {% if socials.email and socials.email != '' %}
+        <p><a href="mailto:{{ socials.email | escape }}">{{ socials.email | escape }}</a></p>
+      {% endif %}
+      {% if profile.address_line_1 and profile.address_line_1 != '' %}
+        <address>
+          {{ profile.address_line_1 | escape }}
+          {% if profile.address_line_2 and profile.address_line_2 != '' %}<br>{{ profile.address_line_2 | escape }}{% endif %}
+        </address>
+      {% endif %}
+    </div>
     <ul class="home-links" aria-label="Contact and academic profiles">
       <li>
         {% if socials.email and socials.email != '' %}
