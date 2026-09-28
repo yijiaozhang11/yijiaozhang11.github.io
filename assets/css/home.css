@@ -58,12 +58,8 @@
   line-height: 1.45;
 }
 
-.academic-home .home-contact p,
 .academic-home .home-contact address {
   margin: 0 0 0.3rem;
-}
-
-.academic-home .home-contact address {
   font-style: normal;
 }
 
