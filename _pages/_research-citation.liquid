@@ -145,7 +145,7 @@
     <p class="publication-abstract-label">Abstract</p>
     {%- assign abstract = entry.abstract | default: '' | strip -%}
     {% if abstract != '' %}
-      <p>{{ abstract | escape | newline_to_br }}</p>
+      <p>{{ abstract | escape }}</p>
     {% else %}
       <p>Abstract not yet added.</p>
     {% endif %}
