@@ -83,7 +83,7 @@ Publication years, order within each year, and metadata come from papers.bib.
   <section class="cv-section" aria-labelledby="cv-manuscripts">
     <h2 class="cv-section-title" id="cv-manuscripts">Manuscripts Under Review or Revision</h2>
     <div class="cv-publication-years">
-      {% bibliography --query @*[cv_section=manuscript] %}
+      {% bibliography --query @*[cv_section=manuscript] --group_by none %}
     </div>
   </section>
 
