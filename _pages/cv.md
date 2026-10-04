@@ -80,10 +80,17 @@ Publication years, order within each year, and metadata come from papers.bib.
     </div>
   </section>
 
+  <section class="cv-section" aria-labelledby="cv-manuscripts">
+    <h2 class="cv-section-title" id="cv-manuscripts">Manuscripts Under Review or Revision</h2>
+    <div class="cv-publication-years">
+      {% bibliography --query @*[cv_section=manuscript] %}
+    </div>
+  </section>
+
   <section class="cv-section" aria-labelledby="cv-publications">
     <h2 class="cv-section-title" id="cv-publications">Publications</h2>
     <div class="cv-publication-years">
-      {% bibliography %}
+      {% bibliography --query @*[cv_section=publication] %}
     </div>
     <p class="cv-author-note">* Joint first author; † corresponding author.</p>
   </section>
