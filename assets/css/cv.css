@@ -42,9 +42,22 @@
 }
 
 .academic-cv .cv-entry-content p,
-.academic-cv .cv-interests p,
 .academic-cv .cv-service-text {
   margin: 0;
+}
+
+.academic-cv .cv-interests {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+.academic-cv .cv-interests li {
+  padding-left: 0.15rem;
+}
+
+.academic-cv .cv-interests li::marker {
+  font-size: 0.8em;
 }
 
 .academic-cv .cv-institution,
@@ -109,7 +122,7 @@
   font-size: 0.85rem;
 }
 
-.academic-cv .cv-interests p + p {
+.academic-cv .cv-interests li + li {
   margin-top: 0.3rem;
 }
 
