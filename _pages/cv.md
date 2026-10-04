@@ -5,7 +5,7 @@ title: CV
 nav: true
 nav_order: 3
 publication_author_notes: true
-publication_preprint_label: arXiv
+publication_preprint_label: arXiv preprint
 scholar:
   bibliography_template: "{% include_relative _research-citation.liquid %}"
   bibliography_list_tag: div
