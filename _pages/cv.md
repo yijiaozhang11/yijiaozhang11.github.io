@@ -75,9 +75,9 @@ Publication years, order within each year, and metadata come from papers.bib.
 
   <section class="cv-section" aria-labelledby="cv-interests">
     <h2 class="cv-section-title" id="cv-interests">Research Interests</h2>
-    <div class="cv-interests">
-      {% for interest in cv.research_interests %}<p>{{ interest | escape }}</p>{% endfor %}
-    </div>
+    <ul class="cv-interests">
+      {% for interest in cv.research_interests %}<li>{{ interest | escape }}</li>{% endfor %}
+    </ul>
   </section>
 
   <section class="cv-section" aria-labelledby="cv-manuscripts">
