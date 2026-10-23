@@ -11,6 +11,10 @@ cleanup() {
 trap cleanup EXIT
 
 cat >"${tmp_override}" <<'YAML'
+# The live academic site excludes the starter's demo posts. Re-enable them only
+# in this temporary build because the Distill post is the fixture tested below.
+exclude:
+  - assets/jupyter/
 giscus:
   repo: alshedivat/al-folio
   repo_id: R_kgDOExample

@@ -11,11 +11,17 @@ cleanup() {
 trap cleanup EXIT
 
 cat >"${tmp_override}" <<'YAML'
+# The live academic site excludes the starter's demo posts. Re-enable them only
+# in this temporary build because they are the fixtures exercised below, while
+# keeping the notebook demo out of this focused test build.
+exclude:
+  - assets/jupyter/
 giscus:
   repo: alshedivat/al-folio
   repo_id: R_kgDOExample
   category: Comments
   category_id: DIC_kwDOExample
+disqus_shortname: al-folio
 YAML
 
 bundle exec jekyll build --config "_config.yml,${tmp_override}" -d "${tmp_site}" >/dev/null

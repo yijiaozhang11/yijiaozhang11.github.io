@@ -26,9 +26,18 @@ fail() {
   exit 1
 }
 
+# The live academic site excludes the starter's demo posts. These temporary
+# configs re-enable the fixtures exercised below without building the notebook
+# demo, which requires Jupyter in the local test environment.
+fixture_override="${tmp_dir}/fixture-posts.yml"
+cat >"${fixture_override}" <<'YAML'
+exclude:
+  - assets/jupyter/
+YAML
+
 # --- al_rtl -----------------------------------------------------------------
 
-default_site="$(build default)"
+default_site="$(build default --config "_config.yml,${fixture_override}")"
 
 rtl_page="${default_site}/blog/2022/rtl/index.html"
 [ -f "${rtl_page}" ] || fail "RTL demo post was not built"
@@ -73,7 +82,11 @@ grep -q 'al_marimo' "${default_site}/index.html" && fail "home page wrongly load
 # shipped config: turning it on for the demo site would flip the default for
 # everyone who copies this template.
 override="${tmp_dir}/protect-email.yml"
-printf 'protect_email: true\n' >"${override}"
+cat >"${override}" <<'YAML'
+exclude:
+  - assets/jupyter/
+protect_email: true
+YAML
 protected_site="$(build protected --config "_config.yml,${override}")"
 
 # Scope note: this asserts the gating and the runtime, NOT that site-wide
